@@ -21,12 +21,8 @@ namespace ADBTeam27_DB4O
         private void Form1_Load(object sender, EventArgs e)
         {
             DataHelper.DBFileName = "QLMonHocdb.yab";
-            Khoa khoa = new Khoa("KKK", "dsa", "sadad", "dagda");
-            DataHelper.AddKhoa(khoa);
-            MonHoc montr = new MonHoc(1, "sấ", "addas", khoa, null, 2);
-            DataHelper.AddMonHoc(montr);
-            MonHoc mon = new MonHoc(2, "ltdt", "đã qua", khoa, null, 2);
-            DataHelper.AddMonHoc(mon);
+            //MonHoc mon = new MonHoc(1, "Cơ sở dữ liệu", "đã qua", khoa, null, 3);
+            //DataHelper.AddMonHoc(mon);
 
             grvKhoa.DataSource = null;
             grvKhoa.DataSource = DataHelper.GetListKhoa<Khoa>();
