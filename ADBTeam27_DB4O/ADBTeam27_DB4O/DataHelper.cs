@@ -61,16 +61,15 @@ namespace ADBTeam27_DB4O
         public static Khoa selectKhoa(string s)
         {
             IObjectContainer db = Db4oEmbedded.OpenFile(DBFileName);
-            Khoa result = (from Khoa p in db where p.MaKhoa.StartsWith(s.TrimEnd()) select p).Single();
-            
+            Khoa result = (from Khoa p in db where p.MaKhoa.StartsWith(s.TrimEnd()) select p).FirstOrDefault();
             return result;
         }
         public static MonHoc selectMonHoc(int s)
         {
             IObjectContainer db = Db4oEmbedded.OpenFile(DBFileName);
-            IEnumerable<MonHoc> result = from MonHoc p in db where p.MaMH == s select p;
-//            MonHoc course = new MonHoc(result.MaMH, result.TenMon, result.MoTa, result.KhoaQuanLy,result.MonDieuKien,result.SoTinChi);
-            return result.ToArray()[0];
+            MonHoc result = (from MonHoc p in db where p.MaMH == s select p).FirstOrDefault();
+            //            MonHoc course = new MonHoc(result.MaMH, result.TenMon, result.MoTa, result.KhoaQuanLy,result.MonDieuKien,result.SoTinChi);
+            return result;
         }
         public static List<MonHoc> GetDK()
         {

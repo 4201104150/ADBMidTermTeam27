@@ -48,8 +48,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtMH_MMHT = new System.Windows.Forms.TextBox();
             this.txtMH_MaKhoa = new System.Windows.Forms.TextBox();
-            this.txtMH_MaMHTruoc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.grvMonHoc = new System.Windows.Forms.DataGridView();
@@ -164,8 +164,8 @@
             // 
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtMH_MaMHTruoc);
             this.groupBox2.Controls.Add(this.txtMH_MaKhoa);
+            this.groupBox2.Controls.Add(this.txtMH_MMHT);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -245,20 +245,20 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Số tín chỉ";
             // 
+            // txtMH_MMHT
+            // 
+            this.txtMH_MMHT.Location = new System.Drawing.Point(115, 134);
+            this.txtMH_MMHT.Name = "txtMH_MMHT";
+            this.txtMH_MMHT.Size = new System.Drawing.Size(100, 20);
+            this.txtMH_MMHT.TabIndex = 2;
+            // 
             // txtMH_MaKhoa
             // 
-            this.txtMH_MaKhoa.Location = new System.Drawing.Point(115, 134);
+            this.txtMH_MaKhoa.Location = new System.Drawing.Point(115, 161);
             this.txtMH_MaKhoa.Name = "txtMH_MaKhoa";
             this.txtMH_MaKhoa.Size = new System.Drawing.Size(100, 20);
-            this.txtMH_MaKhoa.TabIndex = 2;
-            // 
-            // txtMH_MaMHTruoc
-            // 
-            this.txtMH_MaMHTruoc.Location = new System.Drawing.Point(115, 161);
-            this.txtMH_MaMHTruoc.Name = "txtMH_MaMHTruoc";
-            this.txtMH_MaMHTruoc.Size = new System.Drawing.Size(100, 20);
-            this.txtMH_MaMHTruoc.TabIndex = 3;
-            this.txtMH_MaMHTruoc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMH_MaMHTruoc_KeyUp);
+            this.txtMH_MaKhoa.TabIndex = 3;
+            this.txtMH_MaKhoa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMH_MaMHTruoc_KeyUp);
             // 
             // label9
             // 
@@ -339,8 +339,8 @@
         private System.Windows.Forms.TextBox txtMaMonHoc;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtMH_MaMHTruoc;
         private System.Windows.Forms.TextBox txtMH_MaKhoa;
+        private System.Windows.Forms.TextBox txtMH_MMHT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

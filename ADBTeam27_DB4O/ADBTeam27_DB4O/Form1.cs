@@ -20,7 +20,7 @@ namespace ADBTeam27_DB4O
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DataHelper.DBFileName = "QLMonHocdb.yab";
+            DataHelper.DBFileName = "QLMonHocdbb.yab";
             //MonHoc mon = new MonHoc(1, "Cơ sở dữ liệu", "đã qua", khoa, null, 3);
             //DataHelper.AddMonHoc(mon);
 
@@ -43,10 +43,22 @@ namespace ADBTeam27_DB4O
         private void btnThemMon_Click(object sender, EventArgs e)
         {
             Khoa khoaz = DataHelper.selectKhoa(txtMH_MaKhoa.Text);
-            MonHoc monHoc = DataHelper.selectMonHoc(int.Parse(txtMH_MaMHTruoc.Text));
-            MonHoc monHocz = new MonHoc(int.Parse(txtMaMonHoc.Text),txtTenMon.Text,txtMoTa.Text,khoaz,monHoc,double.Parse(txtSoTinChi.Text));
-            DataHelper.AddMonHoc(monHocz);
-            grvMonHoc.DataSource = DataHelper.GetListMonHoc<MonHoc>();
+            if(txtMH_MMHT.Text=="")
+            {
+                MonHoc monHocz = new MonHoc(int.Parse(txtMaMonHoc.Text), txtTenMon.Text, txtMoTa.Text, khoaz, null, double.Parse(txtSoTinChi.Text));
+                DataHelper.AddMonHoc(monHocz);
+                grvMonHoc.DataSource = DataHelper.GetListMonHoc<MonHoc>();
+
+            }
+            else
+            {    int i = int.Parse(txtMH_MMHT.Text);
+
+                MonHoc monHoc = DataHelper.selectMonHoc(i);
+                MonHoc monHocz = new MonHoc(int.Parse(txtMaMonHoc.Text), txtTenMon.Text, txtMoTa.Text, khoaz, monHoc, double.Parse(txtSoTinChi.Text));
+                DataHelper.AddMonHoc(monHocz);
+                grvMonHoc.DataSource = DataHelper.GetListMonHoc<MonHoc>();
+
+            }
         }
     }
 }
